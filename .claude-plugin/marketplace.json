@@ -1,0 +1,14 @@
+{
+  "name": "shelter-skills",
+  "owner": {
+    "name": "Shelter Finance",
+    "url": "https://shelterfinance.com"
+  },
+  "plugins": [
+    {
+      "name": "shelter",
+      "source": ".",
+      "description": "Connect to your Shelter financial data — safe-to-spend, cash forecasts, zombie subscriptions, affordability checks, and AI coaching."
+    }
+  ]
+}
