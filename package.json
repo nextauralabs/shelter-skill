@@ -1,6 +1,6 @@
 {
-  "name": "@shelter/agent-skill",
-  "version": "1.0.0",
+  "name": "@shelter.money/agent-skill",
+  "version": "1.0.5",
   "description": "Shelter Agent Skill — connect AI agents to your real bank data. Safe-to-spend, cash forecasts, zombie subscriptions, affordability checks, AI coaching.",
   "author": "Shelter Finance <support@shelter.money>",
   "license": "MIT",
