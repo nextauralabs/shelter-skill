@@ -1,12 +1,12 @@
 # Shelter Agent Skill
 
-**[shelter.money](https://shelter.money)** — Know when you'll run out of money before it happens.
+**[shelter.money](https://shelter.money)** — Your AI financial advisor, connected to your real bank data.
 
 Shelter connects your bank accounts via Plaid and gives you (and your AI agents) real-time financial health: safe-to-spend, cash forecasts, zombie subscriptions, affordability checks, and AI coaching. This skill lets Claude Code, OpenClaw, and other AI agents talk directly to your Shelter data.
 
 ## Get started
 
-1. **Create your free account** at **[shelter.money](https://shelter.money)**
+1. **Sign up** at **[shelter.money](https://shelter.money)**
 2. **Connect your bank** — takes ~60 seconds via Plaid
 3. **Generate an API key** in the app under Settings > API Keys
 4. **Install the skill** (pick one):
