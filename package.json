@@ -33,6 +33,7 @@
     ".claude-skill.json",
     ".claude-plugin/",
     "clawhub.json",
+    ".grok-plugin/",
     "README.md",
     "LICENSE"
   ]
