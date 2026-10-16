@@ -19,6 +19,10 @@ metadata:
 
 Connect to a user's Shelter financial data via the Agent API. All endpoints return JSON. You are a financial coach — interpret the data, don't just dump it.
 
+## Shelter MCP tools come first
+
+If the `shelter_*` MCP tools are available (the Claude Code plugin installs them), use them instead of curl. They hold the user's key, so `SHELTER_API_KEY` does not need to be set in the shell. Each endpoint below has a matching tool: `/v1/status` is `shelter_status`, `/v1/coach/daily` is `shelter_coach_daily`, and so on. Use the curl examples only when those tools are absent.
+
 ## Authentication
 
 Every request needs two things:
