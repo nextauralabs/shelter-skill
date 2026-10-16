@@ -34,7 +34,8 @@
     ".claude-plugin/",
     "clawhub.json",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "!.claude-plugin/icon.png"
   ],
   "dependencies": {
     "@shelter.money/mcp": "1.0.7"
