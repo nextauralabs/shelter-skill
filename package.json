@@ -35,5 +35,8 @@
     "clawhub.json",
     "README.md",
     "LICENSE"
-  ]
+  ],
+  "dependencies": {
+    "@shelter.money/mcp": "1.0.7"
+  }
 }
