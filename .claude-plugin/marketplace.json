@@ -2,7 +2,10 @@
   "name": "shelter-skills",
   "owner": {
     "name": "Shelter Finance",
-    "url": "https://shelterfinance.com"
+    "url": "https://shelter.money"
+  },
+  "metadata": {
+    "description": "Shelter for Claude Code: the Shelter skill plus the Shelter MCP server, read-only access to your own financial context."
   },
   "plugins": [
     {

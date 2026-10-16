@@ -1,5 +1,13 @@
 {
   "name": "shelter",
   "description": "Connect to your Shelter financial data. Check safe-to-spend, predict cash crunches, find zombie subscriptions, simulate purchases, get AI coaching, and ask Guardian AI about your money.",
-  "version": "1.0.0"
+  "version": "1.1.0",
+  "homepage": "https://shelter.money/developers",
+  "repository": "https://github.com/nextauralabs/shelter-skill",
+  "license": "MIT",
+  "author": {
+    "name": "Shelter Finance",
+    "email": "support@shelter.money",
+    "url": "https://shelter.money"
+  }
 }

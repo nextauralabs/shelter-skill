@@ -147,4 +147,4 @@ Use for natural language follow-ups like:
 - "How do I get out of this cash crunch?"
 - "What's my biggest financial risk?"
 
-The `/ask` endpoint is rate-limited (5/day free, 100/day premium), so use the structured endpoints first and save `/ask` for nuanced questions.
+The `/ask` endpoint is rate-limited (5/day starter, 100/day premium), so use the structured endpoints first and save `/ask` for nuanced questions.

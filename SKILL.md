@@ -12,7 +12,7 @@ metadata:
       env: [SHELTER_API_KEY]
       bins: [curl]
     primaryEnv: SHELTER_API_KEY
-    homepage: https://shelterfinance.com
+    homepage: https://shelter.money
 ---
 
 # Shelter
@@ -24,7 +24,7 @@ Connect to a user's Shelter financial data via the Agent API. All endpoints retu
 Every request needs two things:
 
 - **Header**: `X-Shelter-Key: $SHELTER_API_KEY`
-- **Base URL**: `$SHELTER_API_URL` (default: `https://api.shelterfinance.com/agent`)
+- **Base URL**: `$SHELTER_API_URL` (default: `https://api.shelter.money/agent`)
 
 All examples below use these variables. Confirm they're set before making any call.
 
@@ -65,7 +65,7 @@ The user's current financial health snapshot.
 
 ```bash
 curl -s -H "X-Shelter-Key: $SHELTER_API_KEY" \
-  "${SHELTER_API_URL:-https://api.shelterfinance.com/agent}/v1/status"
+  "${SHELTER_API_URL:-https://api.shelter.money/agent}/v1/status"
 ```
 
 **Key response fields**:
@@ -91,7 +91,7 @@ How long until the money runs out.
 
 ```bash
 curl -s -H "X-Shelter-Key: $SHELTER_API_KEY" \
-  "${SHELTER_API_URL:-https://api.shelterfinance.com/agent}/v1/runway"
+  "${SHELTER_API_URL:-https://api.shelter.money/agent}/v1/runway"
 ```
 
 **Key response fields**:
@@ -121,7 +121,7 @@ More detailed endpoints. Use when quick checks aren't enough.
 
 ```bash
 curl -s -H "X-Shelter-Key: $SHELTER_API_KEY" \
-  "${SHELTER_API_URL:-https://api.shelterfinance.com/agent}/v1/forecast"
+  "${SHELTER_API_URL:-https://api.shelter.money/agent}/v1/forecast"
 ```
 
 **Key response fields**:
@@ -142,7 +142,7 @@ Active warnings: zombie subscriptions, spending spikes, upcoming bills.
 
 ```bash
 curl -s -H "X-Shelter-Key: $SHELTER_API_KEY" \
-  "${SHELTER_API_URL:-https://api.shelterfinance.com/agent}/v1/alerts"
+  "${SHELTER_API_URL:-https://api.shelter.money/agent}/v1/alerts"
 ```
 
 **Key response fields**:
@@ -164,7 +164,7 @@ Places the user is wasting money or could save.
 
 ```bash
 curl -s -H "X-Shelter-Key: $SHELTER_API_KEY" \
-  "${SHELTER_API_URL:-https://api.shelterfinance.com/agent}/v1/opportunities"
+  "${SHELTER_API_URL:-https://api.shelter.money/agent}/v1/opportunities"
 ```
 
 **Key response fields**:
@@ -185,7 +185,7 @@ Full financial overview combining status, alerts, spending insights, and upcomin
 
 ```bash
 curl -s -H "X-Shelter-Key: $SHELTER_API_KEY" \
-  "${SHELTER_API_URL:-https://api.shelterfinance.com/agent}/v1/context"
+  "${SHELTER_API_URL:-https://api.shelter.money/agent}/v1/context"
 ```
 
 **Key response fields**:
@@ -211,7 +211,7 @@ Simulate whether the user can afford a specific purchase.
 curl -s -X POST -H "X-Shelter-Key: $SHELTER_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"amount": 200, "description": "New headphones"}' \
-  "${SHELTER_API_URL:-https://api.shelterfinance.com/agent}/v1/affordability"
+  "${SHELTER_API_URL:-https://api.shelter.money/agent}/v1/affordability"
 ```
 
 **Key response fields**:
@@ -237,7 +237,7 @@ Today's personalized coaching message.
 
 ```bash
 curl -s -H "X-Shelter-Key: $SHELTER_API_KEY" \
-  "${SHELTER_API_URL:-https://api.shelterfinance.com/agent}/v1/coach/daily"
+  "${SHELTER_API_URL:-https://api.shelter.money/agent}/v1/coach/daily"
 ```
 
 **Key response fields**:
@@ -261,7 +261,7 @@ Deep-dive coaching on a specific financial topic.
 
 ```bash
 curl -s -H "X-Shelter-Key: $SHELTER_API_KEY" \
-  "${SHELTER_API_URL:-https://api.shelterfinance.com/agent}/v1/coach/advice?topic=debt"
+  "${SHELTER_API_URL:-https://api.shelter.money/agent}/v1/coach/advice?topic=debt"
 ```
 
 **Response format**: Same as daily coaching (headline, body, actions, tone).
@@ -284,7 +284,7 @@ Ask Guardian AI a free-form question about the user's finances. This is the most
 curl -s -X POST -H "X-Shelter-Key: $SHELTER_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"question": "What should I prioritize right now?"}' \
-  "${SHELTER_API_URL:-https://api.shelterfinance.com/agent}/v1/ask"
+  "${SHELTER_API_URL:-https://api.shelter.money/agent}/v1/ask"
 ```
 
 **Key response fields**:
@@ -297,9 +297,21 @@ curl -s -X POST -H "X-Shelter-Key: $SHELTER_API_KEY" \
 
 ---
 
-## Rate Limits
+## Pricing & Rate Limits
 
-| Endpoint group | Free tier | Premium tier |
+API key tier is automatically set based on your Shelter subscription:
+
+| | Free | Premium ($9.99/mo) |
+|---|---|---|
+| AI queries (`/v1/ask`) | 5/day | 100/day |
+| All other requests | 100/day | 10,000/day |
+| Per-minute burst | 10/min | 60/min |
+
+Keys automatically upgrade/downgrade when your subscription changes.
+
+### Per-Endpoint Limits
+
+| Endpoint group | Starter | Premium |
 |----------------|-----------|--------------|
 | Status, Runway | 60/hour | 60/hour |
 | Forecast, Alerts, Opportunities, Context, Affordability | 60/hour | 60/hour |
@@ -311,7 +323,7 @@ curl -s -X POST -H "X-Shelter-Key: $SHELTER_API_KEY" \
 | Code | Meaning | What to do |
 |------|---------|------------|
 | 401 | Invalid or missing API key | Check `SHELTER_API_KEY` is set and valid |
-| 403 | Key lacks required scope | User needs to update key permissions at shelterfinance.com |
+| 403 | Key lacks required scope | User needs to update key permissions at shelter.money |
 | 429 | Rate limit exceeded | Wait and retry. Check `Retry-After` header |
 | 500 | Server error | Wait a moment and retry |
 
@@ -319,9 +331,9 @@ If you get a 401, tell the user to check their API key. Don't retry auth errors.
 
 ## Setup
 
-1. **Sign up** at [shelterfinance.com](https://shelterfinance.com)
+1. **Sign up** at [shelter.money](https://shelter.money)
 2. **Connect bank accounts** via Plaid (takes ~60 seconds)
-3. **Create an Agent API key** at [shelterfinance.com/settings/api-keys](https://shelterfinance.com/settings/api-keys)
+3. **Create an Agent API key** at [shelter.money/settings/api-keys](https://shelter.money/settings/api-keys)
 4. **Set your environment variable**:
    ```bash
    export SHELTER_API_KEY="wv_your_key_here"
@@ -329,7 +341,7 @@ If you get a 401, tell the user to check their API key. Don't retry auth errors.
 5. **Test the connection**:
    ```bash
    curl -s -H "X-Shelter-Key: $SHELTER_API_KEY" \
-     "${SHELTER_API_URL:-https://api.shelterfinance.com/agent}/v1/status"
+     "${SHELTER_API_URL:-https://api.shelter.money/agent}/v1/status"
    ```
 
 ## Security

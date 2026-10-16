@@ -12,11 +12,13 @@ Shelter connects your bank accounts via Plaid and gives you (and your AI agents)
 4. **Install the skill** (pick one):
 
 ```bash
-# Claude Code marketplace
+# Claude Code plugin (skill + Shelter MCP server)
 /plugin marketplace add nextauralabs/shelter-skill
+/plugin install shelter@shelter-skills
 
 # npm
-npm install -g @shelter/agent-skill
+npm install -g @shelter.money/agent-skill
+npm explore -g @shelter.money/agent-skill -- npm run install:skill
 
 # ClawHub
 clawhub install shelter

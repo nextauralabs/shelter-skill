@@ -1,14 +1,14 @@
 {
   "name": "@shelter.money/agent-skill",
-  "version": "1.0.5",
-  "description": "Shelter Agent Skill — connect AI agents to your real bank data. Safe-to-spend, cash forecasts, zombie subscriptions, affordability checks, AI coaching.",
+  "version": "1.0.6",
+  "description": "Shelter — Your AI financial advisor, connected to your real bank data.",
   "author": "Shelter Finance <support@shelter.money>",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/nextauralabs/shelter-skill"
   },
-  "homepage": "https://shelterfinance.com",
+  "homepage": "https://shelter.money",
   "keywords": [
     "claude-code",
     "claude-skills",
@@ -22,8 +22,8 @@
     "ai-coaching"
   ],
   "scripts": {
-    "postinstall": "node install-skill.js",
-    "preuninstall": "node uninstall-skill.js"
+    "install:skill": "node install-skill.js",
+    "uninstall:skill": "node uninstall-skill.js"
   },
   "files": [
     "SKILL.md",

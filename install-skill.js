@@ -45,7 +45,7 @@ try {
   console.log(`Shelter skill installed to ${skillDir}`);
   console.log('');
   console.log('Setup:');
-  console.log('  1. Create an API key at https://shelterfinance.com/settings/api-keys');
+  console.log('  1. Create an API key at https://shelter.money/settings/api-keys');
   console.log('  2. Set the environment variable:');
   console.log('     export SHELTER_API_KEY="wv_your_key_here"');
   console.log('');
