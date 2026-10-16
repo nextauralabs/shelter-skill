@@ -1,12 +1,12 @@
 {
   "name": "@shelter.money/agent-skill",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Shelter — Your AI financial advisor, connected to your real bank data.",
   "author": "Shelter Finance <support@shelter.money>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nextauralabs/shelter-skill"
+    "url": "git+https://github.com/nextauralabs/shelter-skill.git"
   },
   "homepage": "https://shelter.money",
   "keywords": [
