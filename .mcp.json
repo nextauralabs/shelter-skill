@@ -2,9 +2,9 @@
   "mcpServers": {
     "shelter": {
       "command": "npx",
-      "args": ["-y", "@shelter.money/mcp"],
+      "args": ["-y", "@shelter.money/mcp@1.0.7"],
       "env": {
-        "SHELTER_API_KEY": "${SHELTER_API_KEY}"
+        "SHELTER_API_KEY": "${user_config.shelter_api_key}"
       }
     }
   }

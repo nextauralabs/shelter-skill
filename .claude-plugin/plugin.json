@@ -9,5 +9,13 @@
     "name": "Shelter Finance",
     "email": "support@shelter.money",
     "url": "https://shelter.money"
+  },
+  "userConfig": {
+    "shelter_api_key": {
+      "type": "string",
+      "title": "Shelter API key",
+      "description": "Scoped, read-only key from shelter.money/developer (starts with wv_).",
+      "sensitive": true
+    }
   }
 }

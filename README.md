@@ -27,7 +27,7 @@ clawhub install shelter
 # Copy SKILL.md and references/ into ~/.claude/skills/shelter/
 ```
 
-5. **Set your key**:
+5. **Set your key**. The Claude Code plugin asks for it during `/plugin install` and stores it securely. For the other options, export it:
 ```bash
 export SHELTER_API_KEY="wv_your_key_here"
 ```
