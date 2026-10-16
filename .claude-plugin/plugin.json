@@ -17,5 +17,9 @@
       "description": "Scoped, read-only key from shelter.money/developer (starts with wv_).",
       "sensitive": true
     }
-  }
+  },
+  "privacyPolicyUrl": "https://shelter.money/privacy",
+  "supportUrl": "https://shelter.money/support",
+  "documentationUrl": "https://shelter.money/developers",
+  "termsOfServiceUrl": "https://shelter.money/terms"
 }
